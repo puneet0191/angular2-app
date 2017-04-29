@@ -21,9 +21,17 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             AuthorService = (function () {
                 function AuthorService() {
                     this.authorName = ["Puneet", "Raghav", "Drasti"];
+                    this.authorInfo = [
+                        { authorName: "Puneet", isFavorite: false },
+                        { authorName: "Raghav", isFavorite: false },
+                        { authorName: "Drasti", isFavorite: true }
+                    ];
                 }
                 AuthorService.prototype.getAuthorNames = function () {
                     return this.authorName;
+                };
+                AuthorService.prototype.getAuthorInfo = function () {
+                    return this.authorInfo;
                 };
                 AuthorService = __decorate([
                     core_1.Injectable(), 

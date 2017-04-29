@@ -7,7 +7,15 @@ import {Injectable} from 'angular2/core'
 
 export class AuthorService{
     authorName = ["Puneet", "Raghav", "Drasti"];
+    authorInfo = [
+        {authorName: "Puneet", isFavorite: false},
+        {authorName: "Raghav", isFavorite: false},
+        {authorName: "Drasti", isFavorite: true}
+    ];
     getAuthorNames(){
         return this.authorName;
+    }
+    getAuthorInfo(){
+        return this.authorInfo;
     }
 }
