@@ -20,9 +20,14 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             CourseService = (function () {
                 function CourseService() {
+                    this.courseInfo = [
+                        { courseName: "First Course", isLiked: false, totalLikes: 10 },
+                        { courseName: "Second Course", isLiked: false, totalLikes: 20 },
+                        { courseName: "Third Course", isLiked: true, totalLikes: 23 }
+                    ];
                 }
                 CourseService.prototype.getCourses = function () {
-                    return ["First Course", "Course two ", "Course Three"];
+                    return this.courseInfo;
                 };
                 CourseService = __decorate([
                     core_1.Injectable(), 

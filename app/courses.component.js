@@ -1,4 +1,4 @@
-System.register(['angular2/core', './course.service', './auto-grow.directive'], function(exports_1, context_1) {
+System.register(['angular2/core', './course.service', './auto-grow.directive', './heart.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './course.service', './auto-grow.directive'], 
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, course_service_1, auto_grow_directive_1;
+    var core_1, course_service_1, auto_grow_directive_1, heart_component_1;
     var CoursesComponent;
     return {
         setters:[
@@ -22,6 +22,9 @@ System.register(['angular2/core', './course.service', './auto-grow.directive'], 
             },
             function (auto_grow_directive_1_1) {
                 auto_grow_directive_1 = auto_grow_directive_1_1;
+            },
+            function (heart_component_1_1) {
+                heart_component_1 = heart_component_1_1;
             }],
         execute: function() {
             CoursesComponent = (function () {
@@ -29,12 +32,20 @@ System.register(['angular2/core', './course.service', './auto-grow.directive'], 
                     this.title = "These are my courses";
                     this.courses = courseServices.getCourses();
                 }
+                CoursesComponent.prototype.onHeartClick = function ($event, course) {
+                    if ($event.heart) {
+                        course.totalLikes += 1;
+                    }
+                    else {
+                        course.totalLikes -= 1;
+                    }
+                };
                 CoursesComponent = __decorate([
                     core_1.Component({
                         selector: 'courses',
-                        template: "\n        <h2>Courses</h2>\n        {{ title }}\n        <input type=\"text\" autoGrow/>\n            \n        <ul>\n            <li *ngFor=\"#course of courses\">\n               {{ course }}\n            </li>\n        </ul>\n        ",
+                        template: "\n        <h2>Courses</h2>\n        {{ title }}\n        <input type=\"text\" autoGrow/>\n            \n        <ul>\n            <li *ngFor=\"#course of courses\">\n               {{ course.courseName }}<heart [isHeart]=\"course.isLiked\" (changeCount)=\"onHeartClick($event, course)\"></heart>\n                {{course.totalLikes}}\n            </li>\n        </ul>\n        ",
                         providers: [course_service_1.CourseService],
-                        directives: [auto_grow_directive_1.AutoGrowDirective]
+                        directives: [auto_grow_directive_1.AutoGrowDirective, heart_component_1.HeartComponent]
                     }), 
                     __metadata('design:paramtypes', [course_service_1.CourseService])
                 ], CoursesComponent);
