@@ -1,4 +1,4 @@
-System.register(['angular2/core', './courses.component', './authors.component', "./tweet.component", "./panel.component", "./form.component", "./signup-form.component"], function(exports_1, context_1) {
+System.register(['angular2/core', './courses.component', './authors.component', "./tweet.component", "./panel.component", "./form.component", "./signup-form.component", "./change-password.component"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './courses.component', './authors.component', 
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, courses_component_1, authors_component_1, tweet_component_1, panel_component_1, form_component_1, signup_form_component_1;
+    var core_1, courses_component_1, authors_component_1, tweet_component_1, panel_component_1, form_component_1, signup_form_component_1, change_password_component_1;
     var AppComponent;
     return {
         setters:[
@@ -34,16 +34,20 @@ System.register(['angular2/core', './courses.component', './authors.component', 
             },
             function (signup_form_component_1_1) {
                 signup_form_component_1 = signup_form_component_1_1;
+            },
+            function (change_password_component_1_1) {
+                change_password_component_1 = change_password_component_1_1;
             }],
         execute: function() {
+            // import {changePasswordComponent} from './change-password.component'
             AppComponent = (function () {
                 function AppComponent() {
                 }
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n        <h1>Hello Angular</h1>\n        <courses></courses>\n        <authors></authors>\n        <tweet></tweet>\n        <bs-panel header=\"This is first title\"><div class=\"body\"> This is the body</div></bs-panel>\n        <form></form>\n        <signup-form></signup-form>\n    ",
-                        directives: [courses_component_1.CoursesComponent, authors_component_1.AuthorComponent, tweet_component_1.TweetComponent, panel_component_1.PanelComponent, form_component_1.FormComponent, signup_form_component_1.SignUpFormComponent]
+                        template: "\n        <h1>Hello Angular</h1>\n        <courses></courses>\n        <authors></authors>\n        <tweet></tweet>\n        <bs-panel header=\"This is first title\"><div class=\"body\"> This is the body</div></bs-panel>\n        <form></form>\n        <signup-form></signup-form>\n        <change-password></change-password>\n        \n    ",
+                        directives: [courses_component_1.CoursesComponent, authors_component_1.AuthorComponent, tweet_component_1.TweetComponent, panel_component_1.PanelComponent, form_component_1.FormComponent, signup_form_component_1.SignUpFormComponent, change_password_component_1.ChangePasswordComponent]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
